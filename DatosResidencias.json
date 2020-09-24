@@ -1,0 +1,44 @@
+[
+    
+    
+    {
+        "id": 1,
+        "Pais": "Chipre",
+        "Impuestos": 0,
+        "Tiempo": "2 meses",
+        "Otros": "Menos de 1000 euros con el profesional, 2% del sueldo para sanidad en toda Europa",
+        "Salario": " Nicosia 1194",
+        "Apartamento": "Nicosia 450"
+
+    }, {
+        "id": 2,
+        "Pais": "Georgia",
+        "Impuestos": 1,
+        "Tiempo": "El típico",
+        "Otros": "Más barato que Chipre",
+        "Salario": " Tbilisi 265",
+        "Apartamento": "Tbilisi 185"
+
+    }, {
+        "id": 3,
+        "Pais": "Portugal",
+        "Impuestos": 10,
+        "Tiempo": "El típico",
+        "Otros": "Cerca de España",
+        "Salario": " Lisboa 994",
+        "Apartamento": "Lisboa 644"
+
+    }, {
+        "id": 4,
+        "Pais": "Andorra",
+        "Impuestos": 10,
+        "Tiempo": "El típico",
+        "Otros": "Entre 5-10% de impuestos. Menos de 1000 euros para trámites, cerca de España",
+        "Salario": " Andorra la Vieja 1883",
+        "Apartamento": "Tbilisi 475"
+
+    }
+
+
+
+]
