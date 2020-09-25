@@ -23,21 +23,27 @@ var resultadoapirest = document.querySelector('.apirest')
 //----------------------------   EMPEZAR --------------------   --------------------
 function empezar(){
 
+ //residencias();
+ filtro();
+
+
     traeAPI();
     escribecotizacion();
     coronavirus();
 
  calculairpf();
  descuento();
- residencias();
- filtro();
+cotizacion();
+
 
 }
     
 window.onload(empezar());
     
-    //----------------------------   --------------------   --------------------
+    //----------------------------  COTIZACIÓN   --------------------
     
+
+function cotizacion(){
 
 
 $('#formulario').submit(function (evento) {
@@ -56,6 +62,7 @@ escribe.innerHTML= 'La cotización se ha modificado en un ' + resultado + ' %';
 
 
 });
+}
 
 
 // --------------------- DESCUENTO
@@ -195,11 +202,14 @@ escribepreciofinal.innerHTML= '<center>Si descontamos el ' + porcentajep + '%,' 
 
 // ---------------- RESIDENCIAS
 
-function residencias(){
+//function residencias(){
 
 let residencias = document.querySelector('#tablaresidencias');
 
 function traerJsonResidencias (){
+
+
+
     fetch('DatosResidencias.json')
     .then( res=> res.json())
     .then(datos => escribetabla(datos));
@@ -228,7 +238,7 @@ for(let valor of datos){
 
 }
 
-}
+//}
 
 // ----------- FILTRO
 
@@ -252,20 +262,6 @@ function filtrar(datos){
     escribefiltro.innerHTML+=` ${filtrobarato.Pais} <br>`;
  }
 
-// for(let filtro of datos){
-//     console.log('probando filtro');
-
-//     //escribefiltro.innerHTML+= 'probando filtro'; 
-
-//     if(`${filtro.Impuestos}`<10){
-
-//     escribefiltro.innerHTML+= `${filtro.Pais}: ${filtro.Impuestos}% <br>`;  //`${valor.Pais}: ${valor.Impuestos} <br><br>`
-
-   
-
-//     }
-
-//}
 
 } 
 const numeros= [1,2,3,4,5,6,7,8,9]
@@ -459,5 +455,6 @@ function traeAPI(){
     
   }
   
+
 
  
