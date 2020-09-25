@@ -5,6 +5,34 @@ let escribe = document.querySelector('p');
 
 let boton = document.querySelector('button');
 
+//------------------------------------
+var tabla = document.querySelector('#tabla')
+
+var covid = document.querySelector('#tablacovid')
+
+
+
+
+
+var co1 = document.querySelector('.co1')
+var co2 = document.querySelector('.co2')
+var co3 = document.querySelector('.co3')
+
+var resultadoapirest = document.querySelector('.apirest')
+
+//----------------------------   EMPEZAR --------------------   --------------------
+function empezar(){
+
+    traeAPI();
+    escribecotizacion();
+    coronavirus();
+
+}
+    
+window.onload(empezar());
+    
+    //----------------------------   --------------------   --------------------
+    
 
 
 $('#formulario').submit(function (evento) {
@@ -285,4 +313,132 @@ $(document).ready(function() {
       }
     });
   });
+
+
+
+  //----------------------------------------
+  //----------------------------------------
+  //----------------------------------------
+
+
+
+
+  
+
+
+
+  //----------------------------   API INDICES --------------------   --------------------
+function traeAPI(){
+
+    console.log('llega a traeapi');
+
+    fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-summary?region=US&lang=es", {
+      "method": "GET",
+      "headers": {
+          "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+          "x-rapidapi-key": "5b296644afmsh7ee3b615df42b09p16bb4djsnecd1a4692888"
+      }
+  })
+  .then( res => res.json())
+  .then(datosmercado => {
+  
+  
+  co1.innerHTML = `${datosmercado.marketSummaryResponse.result['0'].regularMarketChangePercent.fmt} `
+  
+  if (datosmercado.marketSummaryResponse.result['0'].regularMarketChangePercent.raw > 0){
+  
+    co1.style.color = "green";
+  }else{
+    co1.style.color = "red";
+  }
+  // ${datosmercado.marketSummaryResponse.result['14'].regularMarketPrice.raw}
+  //FTSE 100 &nbsp; 
+  co2.innerHTML = `${datosmercado.marketSummaryResponse.result['14'].regularMarketChangePercent.fmt}
+  `
+  if (datosmercado.marketSummaryResponse.result['14'].regularMarketChangePercent.raw > 0){
+  
+    co2.style.color = "green";
+  }else{
+    co2.style.color = "red";
+  }
+  
+  
+  
+  })
+  .catch(err => {
+      console.log(err);
+  });
+  
+  }
+  //----------------------------   --------------------   --------------------
+  
+  
+  
+  //----------------------------   API ACCIONES --------------------   --------------------
+  function escribecotizacion(){
+  
+    fetch("https://alpha-vantage.p.rapidapi.com/query?symbol=BRK.B&function=GLOBAL_QUOTE", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
+        "x-rapidapi-key": "5b296644afmsh7ee3b615df42b09p16bb4djsnecd1a4692888"
+      }
+    })
+    .then(res => res.json())
+    .then(response => {
+      console.log(response);
+  
+ 
+   co3.innerHTML = `${response['Global Quote']['10. change percent']} `
+  
+ 
+   if (response['Global Quote']['09. change'] > 0){
+  
+    co3.style.color = "green";
+  }else{
+    co3.style.color = "red";
+  }
+  
+
+  
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  
+  }
+  
+  //----------------------------   --------------------   --------------------
+  
+  
+  
+  //----------------------------   API COVID --------------------   --------------------
+  function coronavirus(){
+  
+    fetch("https://covid-19-data.p.rapidapi.com/country?format=json&name=spain", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+        "x-rapidapi-key": "5b296644afmsh7ee3b615df42b09p16bb4djsnecd1a4692888"
+      }
+    })
+    .then( res => res.json())
+    .then(datoscovid => {
+   
+  
+      covid.innerHTML = ` <tr>
+      <th scope="row">${datoscovid['0'].code}</th>
+      <td>${datoscovid['0'].confirmed}</td>
+      <td>${datoscovid['0'].deaths}</td>
+      <td>${datoscovid['0'].recovered}</td>
+    </tr> `
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  
+    
+  }
+  
+
  
