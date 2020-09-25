@@ -27,6 +27,11 @@ function empezar(){
     escribecotizacion();
     coronavirus();
 
+ calculairpf();
+ descuento();
+ residencias();
+ filtro();
+
 }
     
 window.onload(empezar());
@@ -55,6 +60,7 @@ escribe.innerHTML= 'La cotización se ha modificado en un ' + resultado + ' %';
 
 // --------------------- DESCUENTO
 
+function descuento(){
 
 let escribepreciofinal = document.querySelector('#escribepreciofinal');
 
@@ -78,6 +84,8 @@ escribepreciofinal.innerHTML= '<center>Si descontamos el ' + porcentajep + '%,' 
 
 
 });
+
+}
 
 // ---------------- DESCUENTO 2
 // $(document).ready(function() {
@@ -127,62 +135,67 @@ escribepreciofinal.innerHTML= '<center>Si descontamos el ' + porcentajep + '%,' 
     
 
 
-// ------------------- IRPF
+// ------------------- IRPF ANTIGUO
+
+// function calculairpf(){
 
 
-let escribeirpf = document.querySelector('#escribeirpf');
+// let escribeirpf = document.querySelector('#escribeirpf');
 
 
-$('#irpfform').submit(function (evento) {
+// $('#irpfform').submit(function (evento) {
 
-    evento.preventDefault(); 
+//     evento.preventDefault(); 
 
     
 
-    let salarioBruto= $('#salario').val();
+//     let salarioBruto= $('#salario').val();
 
-    salarioBruto = parseFloat(salarioBruto);
+//     salarioBruto = parseFloat(salarioBruto);
 
-    let IRPF;
+//     let IRPF;
 
 
 
-    if(salarioBruto<12451) {
+//     if(salarioBruto<12451) {
 			
-        IRPF=salarioBruto*0.19;
+//         IRPF=salarioBruto*0.19;
         
-    }else if(salarioBruto<20201) {  // ME EQUIVOQUÉ, EN LAS DOS, TENGO QUE ACLARAR EL SUELDO QUE ME QUEDA Y EL IRPF A PAGAR, ,LAS DOS
+//     }else if(salarioBruto<20201) {  // ME EQUIVOQUÉ, EN LAS DOS, TENGO QUE ACLARAR EL SUELDO QUE ME QUEDA Y EL IRPF A PAGAR, ,LAS DOS
         
-        IRPF=(12450*0.19) + (salarioBruto-12450)*0.24;
+//         IRPF=(12450*0.19) + (salarioBruto-12450)*0.24;
         
-    }else if(salarioBruto<35201) {
+//     }else if(salarioBruto<35201) {
         
-        IRPF=(12450*0.19) + (7750*0.24) + (salarioBruto-20200)*0.3;
+//         IRPF=(12450*0.19) + (7750*0.24) + (salarioBruto-20200)*0.3;
         
-    }else if(salarioBruto<60001){
+//     }else if(salarioBruto<60001){
         
-        IRPF= (12450*0.19) + (7750*0.24) + (15000*0.3) + (salarioBruto-35200)*0.37;
+//         IRPF= (12450*0.19) + (7750*0.24) + (15000*0.3) + (salarioBruto-35200)*0.37;
         
-    }else if(salarioBruto>60000){
+//     }else if(salarioBruto>60000){
         
-        IRPF= (12450*0.19) + (7750*0.24) + (15000*0.3) + (24800*0.37) + (salarioBruto-60000)*0.45;
+//         IRPF= (12450*0.19) + (7750*0.24) + (15000*0.3) + (24800*0.37) + (salarioBruto-60000)*0.45;
         
-    }else {
+//     }else {
         
-        IRPF=1;    // RECUERDA PONER UNA VALIDACIÓN PARA EVITAR NÚMEROS NEGATIVOS
+//         IRPF=1;    // RECUERDA PONER UNA VALIDACIÓN PARA EVITAR NÚMEROS NEGATIVOS
         
-    }
+//     }
 
    
 
-escribeirpf.innerHTML=  IRPF ;
+// escribeirpf.innerHTML=  IRPF ;
 
 
 
-});
+// });
 
+// }
 
 // ---------------- RESIDENCIAS
+
+function residencias(){
 
 let residencias = document.querySelector('#tablaresidencias');
 
@@ -213,11 +226,13 @@ for(let valor of datos){
   </tr>`
 }
 
-
+}
 
 }
 
 // ----------- FILTRO
+
+function filtro(){
 
 let escribefiltro = document.querySelector('#escribefiltro');
 
@@ -262,9 +277,13 @@ const mascotas = [{nombre: 'puchini', raza: 'perro'},{nombre: 'chanchito', raza:
 const perros = mascotas.filter(x => x.raza=='perro')
 console.log(perros);
 
+}
 
-//------------- SIN BOTÓN
-$(document).ready(function() {
+
+//------------- IRPF SIN BOTÓN
+function calculairpf(){
+
+
     //Declarar variables reutilizables
     var input = $("#salariobase");
     var contenidoirpf = $("#contenidoirpf");
@@ -312,8 +331,8 @@ $(document).ready(function() {
         contenidoirpf.html("");
       }
     });
-  });
-
+  
+  }
 
 
   //----------------------------------------
