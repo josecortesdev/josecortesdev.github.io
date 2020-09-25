@@ -10,9 +10,36 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <style>
+
+      .contenedorbolsa{
+        display: flex;
+        
+        flex-direction: row;
+
+        justify-content: center;
+      }
+
+      .cotizacion{
+       
+        width: 25%;
+        text-align: center;
+      }
+
+      .cotizacion{
+
+        font-weight: 600;
+      }
+
+      
+
+
+    </style>
 
 </head>
 <body>
+
+
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -24,12 +51,12 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
 
-          <ul class="navbar-nav">
+          <ul class="navbar-nav text-center">
             <li class="nav-item">
               <a class="nav-link" href="cotizacion.html">Cotización <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Interés compuesto</a>
+              <a class="nav-link" href="#">Interés compuesto</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="IRPF.html">IRPF</a>
@@ -38,12 +65,110 @@
               <a class="nav-link" href="residencias.html">R.fiscales</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#index.html">Empr.</a>
+              <a class="nav-link" href="#">Empresas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Datos de APIS</a>
             </li>
             
           </ul>
         </div>
       </nav>
+
+
+
+      
+    <hr>
+    <div class="contenedorbolsa">
+    
+      <div class="cotizacion cot1">
+        <!--  cot 1 -->
+        SP500
+          <div class="co1">
+            <div class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          </div>
+      </div>
+    
+      <div class="cotizacion cot2">
+        <!--  cot 2 -->
+        FTSE 100
+          <div class="co2">
+              <div class="spinner-grow" role="status">
+               <span class="sr-only">Loading...</span>
+          </div>
+    </div>
+      </div>
+    
+      <div class="cotizacion cot3">
+        <!--  cot 3 -->
+        BRK.B
+           <div class="co3">
+              <div class="spinner-grow" role="status">
+             <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+      </div>
+      
+    
+    </div>
+    
+    <hr>
+    
+      <div class="container my-5 text-center">
+    <p><h1>Tabla ETFs</h1>  </p>
+    
+       <!-- <button class="btn btn-danger w-100" onclick="traeAPI()"> Obtener API </button> -->
+            <div class="mt-5">
+                 
+              <div class="spinner-grow" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+    
+            </div>
+       </div>
+    
+       <div class="mx-auto" style="width: 700px;">
+    
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">País</th>
+              <th scope="col">Contagiados</th>
+              <th scope="col">Muertes</th>
+              <th scope="col">Recuperados</th>
+            </tr>
+          </thead>
+          <tbody id="tablacovid">
+            <tr>
+              <th scope="row" id="pais">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+      <!--      <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>                  -->
+          </tbody>
+        </table>
+      
+      
+        <br><br>
+      
+      
+      
+      </div>
+    
     
 
 
@@ -58,7 +183,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
 
 </body>
 </html>
