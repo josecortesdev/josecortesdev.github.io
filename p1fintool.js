@@ -94,111 +94,12 @@ escribepreciofinal.innerHTML= '<center>Si descontamos el ' + porcentajep + '%,' 
 
 }
 
-// ---------------- DESCUENTO 2
-// $(document).ready(function() {
-   
-//     var inputprecio = $("#precioproducto");
-//     var porcentajeproducto = $("#porcentajeproducto");
-//     var escribepreciofinal = $("#escribepreciofinal");
-
-//     let almacenaprecio;
-//     let almacenaporcentaje;
-
-
-
-//     inputprecio.keyup(function() {  // Intro precio
-      
-//         almacenaprecio = inputprecio.val();
-        
-//         porcentajeproducto.keyup(function() {  // Intro porcentaje después de precio
-        
-//         almacenaporcentaje = porcentajeproducto.val();
-
-//         inputprecio.keyup(function() {  // intro precio después de porcentaje
-      
-//             almacenaprecio = inputprecio.val();
-  
-
-//     almacenaprecio = parseFloat(almacenaprecio);
-//     almacenaporcentaje = parseFloat(almacenaporcentaje);
-
-//        let almacenaresultado = almacenaprecio - almacenaprecio * (almacenaporcentaje/100);
-
-//         escribepreciofinal.html(almacenaresultado);
-//         });
-//     });
-//     });
-
-    
-
-
-// });
-
 
 
   
   
 
     
-
-
-// ------------------- IRPF ANTIGUO
-
-// function calculairpf(){
-
-
-// let escribeirpf = document.querySelector('#escribeirpf');
-
-
-// $('#irpfform').submit(function (evento) {
-
-//     evento.preventDefault(); 
-
-    
-
-//     let salarioBruto= $('#salario').val();
-
-//     salarioBruto = parseFloat(salarioBruto);
-
-//     let IRPF;
-
-
-
-//     if(salarioBruto<12451) {
-			
-//         IRPF=salarioBruto*0.19;
-        
-//     }else if(salarioBruto<20201) {  // ME EQUIVOQUÉ, EN LAS DOS, TENGO QUE ACLARAR EL SUELDO QUE ME QUEDA Y EL IRPF A PAGAR, ,LAS DOS
-        
-//         IRPF=(12450*0.19) + (salarioBruto-12450)*0.24;
-        
-//     }else if(salarioBruto<35201) {
-        
-//         IRPF=(12450*0.19) + (7750*0.24) + (salarioBruto-20200)*0.3;
-        
-//     }else if(salarioBruto<60001){
-        
-//         IRPF= (12450*0.19) + (7750*0.24) + (15000*0.3) + (salarioBruto-35200)*0.37;
-        
-//     }else if(salarioBruto>60000){
-        
-//         IRPF= (12450*0.19) + (7750*0.24) + (15000*0.3) + (24800*0.37) + (salarioBruto-60000)*0.45;
-        
-//     }else {
-        
-//         IRPF=1;    // RECUERDA PONER UNA VALIDACIÓN PARA EVITAR NÚMEROS NEGATIVOS
-        
-//     }
-
-   
-
-// escribeirpf.innerHTML=  IRPF ;
-
-
-
-// });
-
-// }
 
 // ---------------- RESIDENCIAS
 
@@ -297,7 +198,7 @@ function calculairpf(){
 			
         IRPF2=salarioinput*0.19;
         
-    }else if(salarioinput<20201) {  // ME EQUIVOQUÉ, EN LAS DOS, TENGO QUE ACLARAR EL SUELDO QUE ME QUEDA Y EL IRPF A PAGAR, ,LAS DOS
+    }else if(salarioinput<20201) {  
         
         IRPF2=(12450*0.19) + (salarioinput-12450)*0.24;
         
@@ -315,7 +216,7 @@ function calculairpf(){
         
     }else {
         
-        IRPF2=1;    // RECUERDA PONER UNA VALIDACIÓN PARA EVITAR NÚMEROS NEGATIVOS
+        IRPF2=1;   
         
     }
 
@@ -331,18 +232,8 @@ function calculairpf(){
   }
 
 
-  //----------------------------------------
-  //----------------------------------------
-  //----------------------------------------
 
-
-
-
-  
-
-
-
-  //----------------------------   API INDICES --------------------   --------------------
+  //----------------------------   API INDICES --------------------   
 function traeAPI(){
 
     console.log('llega a traeapi');
@@ -385,8 +276,7 @@ function traeAPI(){
   });
   
   }
-  //----------------------------   --------------------   --------------------
-  
+
   
   
   //----------------------------   API ACCIONES --------------------   --------------------
@@ -423,7 +313,6 @@ function traeAPI(){
   
   }
   
-  //----------------------------   --------------------   --------------------
   
   
   
