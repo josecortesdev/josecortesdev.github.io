@@ -90,7 +90,7 @@
 			
         IRPF2=salarioinput*0.19;
         
-    }else if(salarioinput<20201) {  // ME EQUIVOQUÉ, EN LAS DOS, TENGO QUE ACLARAR EL SUELDO QUE ME QUEDA Y EL IRPF A PAGAR, ,LAS DOS
+    }else if(salarioinput<20201) { 
         
         IRPF2=(12450*0.19) + (salarioinput-12450)*0.24;
         
@@ -108,7 +108,7 @@
         
     }else {
         
-        IRPF2=1;    // RECUERDA PONER UNA VALIDACIÓN PARA EVITAR NÚMEROS NEGATIVOS
+        IRPF2=1;  
         
     }
 
